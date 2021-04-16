@@ -158,7 +158,6 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginLeft="45dp"
                 android:background="#eee" />
 
             <LinearLayout
@@ -182,7 +181,6 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginLeft="45dp"
                 android:background="#eee" />
 
             <LinearLayout
@@ -206,7 +204,6 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginLeft="45dp"
                 android:background="#eee" />
 
             <LinearLayout
@@ -226,17 +223,9 @@
                     style="@style/TextStyle"
                     android:text="联系客服" />
             </LinearLayout>
-
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginLeft="45dp"
-                android:background="#eee" />
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginLeft="45dp"
                 android:background="#eee" />
 
             <LinearLayout
@@ -260,12 +249,6 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginLeft="45dp"
-                android:background="#eee" />
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginLeft="45dp"
                 android:background="#eee" />
 
             <LinearLayout
@@ -289,7 +272,6 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginLeft="45dp"
                 android:background="#eee" />
 
             <LinearLayout
@@ -313,7 +295,6 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginLeft="45dp"
                 android:background="#eee" />
             <Button
                 android:layout_margin="15dp"
