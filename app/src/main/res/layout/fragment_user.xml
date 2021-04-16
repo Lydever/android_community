@@ -4,7 +4,6 @@
     android:layout_height="match_parent"
     tools:context="com.lyx.mycommunity.fragment.UserFragment">
 
-
     <ScrollView
         android:id="@+id/scrollview"
         android:layout_width="match_parent"
@@ -18,7 +17,7 @@
             <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="170dp"
-                android:background="#9448bb">
+                android:background="#096CE6">
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -323,7 +322,7 @@
                 android:text="退出账号"
                 android:textStyle="bold"
                 android:textColor="#ffffff"
-                android:background="@mipmap/btnbg"
+                android:background="@drawable/shape_login_btn"
                 android:id="@+id/btn_out"/>
         </LinearLayout>
 
@@ -333,7 +332,7 @@
         android:id="@+id/tv_usercenter"
         android:layout_width="match_parent"
         android:layout_height="45dp"
-        android:background="#9448bb"
+        android:background="#096CE6"
         android:gravity="center"
         android:padding="10dp"
         android:text="个人中心"
