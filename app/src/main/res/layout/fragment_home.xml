@@ -20,6 +20,6 @@
         android:layout_alignParentRight="true"
         android:layout_marginBottom="20dp"
         android:layout_marginRight="20dp"
-        android:background="@mipmap/top_image_icon" />
+        android:background="@mipmap/sheng" />
 
 </RelativeLayout>

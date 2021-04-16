@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.lyx.mycommunity.app.LoginActivity;
 import com.lyx.mycommunity.app.MessageCenterActivity;
+import com.lyx.mycommunity.app.NoteShowActivity;
 import com.lyx.mycommunity.app.UserInfoActivity;
 import com.lyx.mycommunity.utils.BatteryChangeReceiver;
 import com.lyx.shoppingcity.R;
@@ -72,8 +73,9 @@ public class UserFragment extends BaseFragment implements View.OnClickListener{
         llFriend.setOnClickListener(this);
         ibUserIconAvator.setOnClickListener(this);
         llVersion.setOnClickListener(this);
-        ibUserSetting.setOnClickListener(this);
         tv_all_order.setOnClickListener(this);
+        llWeiji.setOnClickListener(this);
+
 
     }
 
@@ -88,7 +90,12 @@ public class UserFragment extends BaseFragment implements View.OnClickListener{
         } else if (v == ibUserMessage) {
             Intent intent = new Intent(myContext, MessageCenterActivity.class);
             startActivity(intent);
-        }else if (v == llCall){
+
+        }else if (v ==  llWeiji) {
+            Intent intent = new Intent(myContext, NoteShowActivity.class);
+            startActivity(intent);
+
+        } else if (v == llCall){
             //隐式Intent 由android系统帮助匹配
             //匹配规则，清单文件中的 Intent_filter 标签中的action
             Uri uri = Uri.parse("tel:10086");
