@@ -49,8 +49,7 @@ public class NewsFragment extends BaseFragment{
     @Override
     public View initView() {
         Log.e(TAG, "新闻中心的Frament的UI被初始化");
-        //  View view = View.inflate(myContext, R.layout.fragment_community,null);
-        View view = View.inflate(myContext, R.layout.new_list_item,null);
+        View view = View.inflate(myContext, R.layout.fragment_news,null);
 
         findViews(view);
         initListener();

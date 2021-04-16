@@ -14,17 +14,17 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import com.lyx.mycommunity.adapter.ListAdapter;
 import com.lyx.mycommunity.bean.NoteInfo;
 import com.lyx.mycommunity.dao.Note;
 import com.lyx.mycommunity.dao.NoteDataBaseHelper;
-import com.lyx.mycommunity.utils.BatteryChangeReceiver;
-import com.lyx.mycommunity.utils.MusicService;
 import com.lyx.shoppingcity.R;
 
 import java.io.Serializable;
@@ -35,13 +35,12 @@ import static com.lyx.mycommunity.dao.Note.deleteAllNote;
 
 
 public class NoteShowActivity extends AppCompatActivity {
-
+private Toolbar toolbar;
     EditText mEditSearch;//搜索框
-    Button mTvSearch;//搜索按钮
-    private Button btn_stopMusic, btn_startMusic;
+    private ImageButton mTvSearch;//搜索按钮
     private Button add;//添加按钮
     private Button delete;//删除按钮
-    private Button up,btn_return;//升序
+    private Button up,btn_back;//升序
     private Button down;//降序
     private ListView noteListView;
     private List<NoteInfo> noteList = new ArrayList<>();
@@ -57,26 +56,17 @@ public class NoteShowActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_note_show);
         dbHelper = new NoteDataBaseHelper(this,"MyNote.db",null,1);
-
-        add = (Button) findViewById(R.id.btn_add);
-        delete = (Button) findViewById(R.id.btn_delete);
-        btn_return = findViewById(R.id.btn_return);
-
         initView();
-        setListener();
-
-        //跳转回主界面 刷新列表
-        Intent intent1 = getIntent();
-        if (intent1 != null){
-            getNoteList();
-            mListAdapter.refreshDataSet();//渲染列表
-        }
+        initListener();
     }
 
     private void initView(){
+        add = (Button) findViewById(R.id.btn_add);
+        delete = (Button) findViewById(R.id.btn_delete);
+        toolbar = findViewById(R.id.toolbar);
         noteListView = (ListView) findViewById(R.id.note_list);
         add = (Button) findViewById(R.id.btn_add);
-        mTvSearch = (Button) findViewById(R.id.btn_search);
+        mTvSearch = (ImageButton) findViewById(R.id.btn_search);
         mEditSearch = (EditText) findViewById(R.id.edit_search);
         up = (Button) findViewById(R.id.btn_up);
         down = (Button) findViewById(R.id.btn_down);
@@ -93,19 +83,18 @@ public class NoteShowActivity extends AppCompatActivity {
         noteListView.setAdapter(mListAdapter);
     }
 
-    private void setListener(){
-        btn_startMusic.setOnClickListener(new View.OnClickListener() {
+    private void initListener() {
+        //跳转回主界面 刷新列表
+        Intent intent1 = getIntent();
+        if (intent1 != null){
+            getNoteList();
+            mListAdapter.refreshDataSet();//渲染列表
+        }
+        toolbar.setNavigationIcon(R.mipmap.top_bar_left_back1);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                Intent musicStart = new Intent(NoteShowActivity.this, MusicService.class);
-                startService(musicStart);
-            }
-        });
-        btn_stopMusic.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent musicStop = new Intent(NoteShowActivity.this,MusicService.class);
-                stopService(musicStop);
+            public void onClick(View view) {
+                finish();
             }
         });
         delete.setOnClickListener(new View.OnClickListener() {
@@ -120,19 +109,10 @@ public class NoteShowActivity extends AppCompatActivity {
             }
         });
 
-
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(NoteShowActivity.this,NoteEditorActivity.class);
-                startActivity(intent);
-                NoteShowActivity.this.finish();
-            }
-        });
-        btn_return.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(NoteShowActivity.this,MainActivity.class);
                 startActivity(intent);
                 NoteShowActivity.this.finish();
             }
@@ -149,7 +129,6 @@ public class NoteShowActivity extends AppCompatActivity {
                 queryDataDown();
             }
         });
-
         noteListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -230,6 +209,8 @@ public class NoteShowActivity extends AppCompatActivity {
         Cursor allNotes = Note.getAllNotes(dbHelper);
         noteInfoSet(noteList,allNotes);
     }
+
+
     private void noteInfoSet(List<NoteInfo> noteinfo,Cursor Notes){
         for (Notes.moveToFirst(); !Notes.isAfterLast(); Notes.moveToNext()){
             NoteInfo noteInfo = new NoteInfo();
@@ -243,16 +224,22 @@ public class NoteShowActivity extends AppCompatActivity {
             noteinfo.add(noteInfo);
         }
     }
+
+
     private void getSearchList(String searchData){
         notesearchList.clear();
         Cursor allNotes = Note.getSearchNotes(dbHelper,searchData);
         noteInfoSet(notesearchList,allNotes);
     }
+
+
     private void getListup(){
         noteListup.clear();
         Cursor upNotes = Note.upNotes(dbHelper);
         noteInfoSet(noteListup,upNotes);
     }
+
+
     private void getListDown(){
         noteListdown.clear();
         Cursor downNotes = Note.downNotes(dbHelper);
@@ -271,12 +258,14 @@ public class NoteShowActivity extends AppCompatActivity {
         noteListView.setAdapter( mListSearchAdapter);
         mListSearchAdapter.refreshDataSet();//渲染列表
     }
+
     private void queryDataUp() {
         getListup();
         mListSearchAdapter = new ListAdapter(NoteShowActivity.this,noteListup);
         noteListView.setAdapter( mListSearchAdapter);
         mListSearchAdapter.refreshDataSet();//渲染列表
     }
+
     private void queryDataDown() {
         getListDown();
         mListSearchAdapter = new ListAdapter(NoteShowActivity.this,noteListdown);
@@ -284,8 +273,9 @@ public class NoteShowActivity extends AppCompatActivity {
         mListSearchAdapter.refreshDataSet();//渲染列表
     }
 
-
     public static NoteDataBaseHelper getDbHelper() {
         return dbHelper;
-    }  //给其他类提供dbHelper
+    }
+
+
 }

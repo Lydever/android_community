@@ -138,7 +138,8 @@
                 android:background="#eee" />
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:id="@+id/ll_weiji"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:orientation="horizontal">
@@ -158,10 +159,12 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
+
                 android:background="#eee" />
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:id="@+id/ll_msg"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:orientation="horizontal">
@@ -184,7 +187,8 @@
                 android:background="#eee" />
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
+                android:id="@+id/ll_photo"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:orientation="horizontal">
@@ -207,7 +211,8 @@
                 android:background="#eee" />
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
+                android:id="@+id/ll_call"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:orientation="horizontal">
@@ -229,7 +234,8 @@
                 android:background="#eee" />
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
+                android:id="@+id/ll_friend"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:orientation="horizontal">
@@ -252,7 +258,8 @@
                 android:background="#eee" />
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
+                android:id="@+id/ll_version"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:baselineAligned="false"
@@ -268,29 +275,6 @@
                 <TextView
                     style="@style/TextStyle"
                     android:text="版本更新" />
-            </LinearLayout>
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="#eee" />
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:baselineAligned="false"
-                android:orientation="horizontal">
-
-                <ImageButton
-                    android:id="@+id/ib_bettary"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:background="@null"
-                    android:src="@mipmap/user_channel_icon_invitation" />
-
-                <TextView
-                    style="@style/TextStyle"
-                    android:text="电池电量" />
             </LinearLayout>
             <View
                 android:layout_width="match_parent"

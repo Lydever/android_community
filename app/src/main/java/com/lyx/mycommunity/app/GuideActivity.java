@@ -32,12 +32,9 @@ public class GuideActivity extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_guide);
         vp= findViewById(R.id.guide_vp);
-
         btn= findViewById(R.id.guide_btn);
         btn.setOnClickListener(this);
-        //初始化图片
         initImgs();
-        //初始化底部圆点指示器
         initDots();
         adapter= new VpAdapter(imageViews);
         vp.setAdapter(adapter);

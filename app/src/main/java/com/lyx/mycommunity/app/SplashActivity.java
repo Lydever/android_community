@@ -8,6 +8,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
+import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 
 import com.lyx.mycommunity.app.GuideActivity;
@@ -16,7 +17,7 @@ import com.lyx.shoppingcity.R;
 public class SplashActivity extends AppCompatActivity {
 
 
-    private LinearLayout ll;
+    private FrameLayout ll;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -66,7 +67,7 @@ public class SplashActivity extends AppCompatActivity {
         if ("0".equals(First)) {
             intent.setClass(this, GuideActivity.class);
         }else{
-            intent.setClass(this, MainActivity.class);
+            intent.setClass(this, LoginActivity.class);
         }
         startActivity(intent);
         finish();

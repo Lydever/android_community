@@ -23,7 +23,6 @@
         android:layout_alignParentBottom="true"
         android:background="@drawable/home_bottom_parent_bg"
         android:orientation="horizontal">
-<!--        drawableTop:按钮选中后的颜色-->
         <RadioButton
             android:id="@+id/rb_home"
             style="@style/MainButtonStyle"
@@ -39,17 +38,17 @@
             style="@style/MainButtonStyle"
             android:drawableTop="@drawable/community_button_selector"
             android:paddingTop="10dp"
-            android:text="医疗" />
+            android:text="新闻" />
         <RadioButton
             android:id="@+id/rb_search"
             style="@style/MainButtonStyle"
             android:drawableTop="@drawable/cart_button_selector"
-            android:text="交通" />
+            android:text="发布" />
         <RadioButton
             android:id="@+id/rb_user"
             style="@style/MainButtonStyle"
             android:drawableTop="@drawable/user_button_selector"
-            android:text="旅游" />
+            android:text="用户中心" />
     </RadioGroup>
 
 </LinearLayout>

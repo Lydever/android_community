@@ -33,9 +33,23 @@
         android:layout_height="40dp"
         android:paddingLeft="20dp"
         android:layout_marginBottom="30dp"
-        android:background="@mipmap/btnbgfff"
+        android:background="@drawable/shape_login_form"
         android:hint="请输入查询号码"
        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="查询信息:"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:textColor="#848484"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@drawable/shape_login_form"
+        android:id="@+id/tv_msg"/>
+
     <Button
         android:layout_width="match_parent"
         android:layout_height="40sp"
@@ -44,16 +58,6 @@
         android:layout_marginBottom="20dp"
         android:background="@drawable/shape_login_btn"
         android:id="@+id/btn_query"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="查询信息:"
-        android:layout_marginLeft="10dp"
-        android:textColor="#848484"/>
-    <TextView
-        android:layout_weight="1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/tv_msg"/>
+
 
 </LinearLayout>

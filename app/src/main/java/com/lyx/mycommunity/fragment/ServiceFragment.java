@@ -32,13 +32,7 @@ public class ServiceFragment extends BaseFragment {
     @Override
     public View initView() {
         Log.e(TAG," 服务的视图被实例化了");
-    //    View view = View.inflate(myContext, R.layout.fragment_user,null);
-
         View view = View.inflate(myContext, R.layout.fragment_service,null);
-/*        textView = new TextView(myContext);
-        textView.setGravity(Gravity.CENTER);
-        textView.setTextSize(25);
-        textView.setTextColor(Color.RED);*/
         findview(view);
         initListener();
         return view;

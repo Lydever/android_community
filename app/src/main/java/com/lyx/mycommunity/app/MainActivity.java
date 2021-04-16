@@ -97,8 +97,8 @@ public class MainActivity extends FragmentActivity {
                         break;
                     case R.id.rb_search:
                         position = 3;
-                        intent = new Intent(MainActivity.this,NoteShowActivity.class);
-                        startActivity(intent);
+         /*               intent = new Intent(MainActivity.this,NoteShowActivity.class);
+                        startActivity(intent);*/
                         break;
                     case R.id.rb_user:
                         position = 4;

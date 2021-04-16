@@ -127,15 +127,13 @@ public class NoteEditorActivity extends AppCompatActivity {
     //初始化界面
     private void initView() {
         btn_save = (Button) findViewById(R.id.btn_save);
-        btn_return = (Button) findViewById(R.id.btn_return);
-        tv_now = (TextView) findViewById(R.id.tv_now);
         et_content = (EditText) findViewById(R.id.et_content);
         et_title = (EditText) findViewById(R.id.et_title);
         et_pre = (EditText) findViewById(R.id.itempre);
         pic_button = (ImageView) findViewById(R.id.pic);
         testpic = (ImageView) findViewById(R.id.testpic);
         photodrawable = pic_button.getDrawable();
-        tv_now.setText(getTime());
+//        tv_now.setText(getTime());
 //        //把drawable格式转为byte
         photobyte = dratobyte(photodrawable);
         photobitmap = BitmapFactory.decodeByteArray(photobyte, 0, photobyte.length);
@@ -171,12 +169,7 @@ public class NoteEditorActivity extends AppCompatActivity {
                 }).create().show();
             }
         });
-        btn_return.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onBackPressed();
-            }
-        });
+
         btn_save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
