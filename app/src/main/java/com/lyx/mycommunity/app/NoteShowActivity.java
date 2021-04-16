@@ -63,7 +63,6 @@ private Toolbar toolbar;
     private void initView(){
         add = (Button) findViewById(R.id.btn_add);
         delete = (Button) findViewById(R.id.btn_delete);
-        toolbar = findViewById(R.id.toolbar);
         noteListView = (ListView) findViewById(R.id.note_list);
         add = (Button) findViewById(R.id.btn_add);
         mTvSearch = (ImageButton) findViewById(R.id.btn_search);
@@ -90,13 +89,6 @@ private Toolbar toolbar;
             getNoteList();
             mListAdapter.refreshDataSet();//渲染列表
         }
-        toolbar.setNavigationIcon(R.mipmap.top_bar_left_back1);
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();
-            }
-        });
         delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

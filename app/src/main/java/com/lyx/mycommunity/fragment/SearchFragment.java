@@ -70,7 +70,6 @@ public class SearchFragment extends BaseFragment {
     public void findView(View view) {
         add = view.findViewById(R.id.btn_add);
         delete =view.findViewById(R.id.btn_delete);
-        toolbar = view.findViewById(R.id.toolbar);
         noteListView = view.findViewById(R.id.note_list);
         add =view.findViewById(R.id.btn_add);
         mTvSearch = view.findViewById(R.id.btn_search);
@@ -105,13 +104,6 @@ public class SearchFragment extends BaseFragment {
             getNoteList();
             mListAdapter.refreshDataSet();//渲染列表
         }
-        toolbar.setNavigationIcon(R.mipmap.top_bar_left_back1);
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                getActivity().finish();
-            }
-        });
         delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
