@@ -76,7 +76,7 @@ public class HomeFragment extends BaseFragment {
         dbHelper = new NoteDataBaseHelper(getContext(),"MyNote.db",null,1);
 /*        if (list.isEmpty()){
             for (int i = 0; i < 20; i++) {
-                strlist.add("广州烧烤"+i+"，美味鲜香，快来试试！！享受生活享受美食");
+                strlist.add1("广州烧烤"+i+"，美味鲜香，快来试试！！享受生活享受美食");
             }
         }*/
     }

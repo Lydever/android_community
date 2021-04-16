@@ -20,6 +20,6 @@
         android:layout_alignParentRight="true"
         android:layout_marginBottom="20dp"
         android:layout_marginRight="20dp"
-        android:background="@mipmap/sheng" />
+        android:background="@mipmap/s" />
 
 </RelativeLayout>
