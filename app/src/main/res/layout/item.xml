@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp">
+
+    <ImageView
+        android:id="@+id/rand_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/k"
+        />
+    <TextView
+        android:id="@+id/des"
+        android:layout_below="@id/rand_icon"
+        android:lines="2"
+        android:ellipsize="end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:gravity="center"
+        android:text="跨年一起烧烤嗨皮，享受美食享受当下~"
+        />
+    <ImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/q"
+        android:layout_below="@id/des"
+        android:id="@+id/profile"
+        />
+
+    <TextView
+        android:id="@+id/item_note_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/profile"
+        android:text="干饭人吃好做好"
+        android:layout_marginLeft="10dp"
+        android:layout_below="@id/des"/>
+
+    <ImageView
+        android:id="@+id/love"
+        android:layout_width="19dp"
+        android:layout_height="13dp"
+        android:layout_below="@id/des"
+        android:layout_marginRight="1dp"
+        android:layout_toLeftOf="@id/pre"
+        android:src="@drawable/w" />
+    <TextView
+        android:id="@+id/pre"
+        android:layout_below="@id/des"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="9W+"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="30dp"
+        />
+
+
+</RelativeLayout>
